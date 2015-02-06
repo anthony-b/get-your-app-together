@@ -1,0 +1,27 @@
+<div class="row-fluid">
+<div class="span6">
+<h2>Sign in</h2>
+
+<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+  <div><%= f.label :email %><br />
+  <%= f.email_field :email, :autofocus => true %></div>
+
+  <div><%= f.label :password %><br />
+  <%= f.password_field :password %></div>
+
+  <% if devise_mapping.rememberable? -%>
+    <div><%= f.check_box :remember_me %> <%= f.label :remember_me %></div>
+  <% end -%>
+
+  <div><%= f.submit "Sign in" %></div>
+<% end %>
+
+<%= render "devise/shared/links" %>
+</div>
+<div class="span6 well">
+<h1>Read first</h1>
+<p>The first user to sign in, has access in the users area to set themselves as admin (Click on your username and click edit and tick the Admin checkbox). This must be dont first so you are then given access to greate other users. Once other users are created they dont have access to set permissions, this is always done by an admin.</p>
+<p>Once you are signed in and users are created, then create an organisation > then a product to associate with the organisation > then a task to be associated to the product > the you can add activity to the task you are working on</p>
+If you click on My tasks you can see all the non-complete and complete tasks associated with you.</p>
+</div>
+</div>

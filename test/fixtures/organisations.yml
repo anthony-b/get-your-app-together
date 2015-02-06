@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  org_name: MyString
+  org_description: MyString
+  org_addressline1: MyString
+  org_addressline2: MyString
+  org_addressline3: MyString
+  org_addresscity: MyString
+  org_addresspostcode: MyString
+  org_phonenumber: MyString
+  org_contactname: MyString
+  org_website: MyString
+  org_dateadded: MyString
+  org_addedby: MyString
+
+two:
+  org_name: MyString
+  org_description: MyString
+  org_addressline1: MyString
+  org_addressline2: MyString
+  org_addressline3: MyString
+  org_addresscity: MyString
+  org_addresspostcode: MyString
+  org_phonenumber: MyString
+  org_contactname: MyString
+  org_website: MyString
+  org_dateadded: MyString
+  org_addedby: MyString

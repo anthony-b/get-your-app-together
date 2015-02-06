@@ -1,0 +1,31 @@
+<h1>Showing user</h1>
+<%= image_tag gravatar_url(@user) %>
+<p>
+  <b>First Name:</b>
+  <%= @user.first_name %>
+</p>
+<p>
+  <b>Last Name:</b>
+  <%= @user.last_name %>
+</p>
+<p>
+  <b>Profile name:</b>
+  <%= @user.profile_name %>
+</p>
+<p>
+  <b>Email:</b>
+  <%= @user.email %>
+</p>
+<p>
+  <b>Job title:</b>
+  <%= @user.job_title %>
+</p>
+<p>
+<%= link_to 'Show', @user %><br/>
+    <%= link_to 'Edit', edit_user_path(@user) %><br/>
+    <%= link_to "Cancel my account", @user, :confirm => "Are you sure?", :method => :delete %>
+
+</p>
+
+
+<br />

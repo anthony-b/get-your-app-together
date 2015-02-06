@@ -1,0 +1,61 @@
+<%= form_for(@organisation) do |f| %>
+  <% if @organisation.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@organisation.errors.count, "error") %> prohibited this organisation from being saved:</h2>
+
+      <ul>
+      <% @organisation.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :Name %><br />
+    <%= f.text_field :org_name %>
+  </div>
+  <div class="field">
+    <%= f.label :Description %><br />
+    <%= f.text_field :org_description %>
+  </div>
+  <div class="field">
+    <%= f.label :Address_line_1 %><br />
+    <%= f.text_field :org_addressline1 %>
+  </div>
+  <div class="field">
+    <%= f.label :Address_line_2 %><br />
+    <%= f.text_field :org_addressline2 %>
+  </div>
+  <div class="field">
+    <%= f.label :Address_line_3 %><br />
+    <%= f.text_field :org_addressline3 %>
+  </div>
+  <div class="field">
+    <%= f.label :City %><br />
+    <%= f.text_field :org_addresscity %>
+  </div>
+  <div class="field">
+    <%= f.label :Postcode %><br />
+    <%= f.text_field :org_addresspostcode %>
+  </div>
+  <div class="field">
+    <%= f.label :Phone_number %><br />
+    <%= f.text_field :org_phonenumber %>
+  </div>
+  <div class="field">
+    <%= f.label :Contact_name %><br />
+    <%= f.text_field :org_contactname %>
+  </div>
+  <div class="field">
+    <%= f.label :Website %><br />
+    <%= f.text_field :org_website %>
+  </div>
+  <div class="field">
+    <%= f.label :Created_by %><br />
+    <%= f.collection_select :org_addedby, User.order(:profile_name),:profile_name,:profile_name, include_blank: true %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

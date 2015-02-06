@@ -1,0 +1,69 @@
+<p id="notice"><%= notice %></p>
+<h4>
+  <b>ID:</b>
+  <%= @organisation.id %>
+</h4>
+
+<p>
+  <b>Name:</b>
+  <%= @organisation.org_name %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @organisation.org_description %>
+</p>
+
+<p>
+  <b>Address line 1:</b>
+  <%= @organisation.org_addressline1 %>
+</p>
+
+<p>
+  <b>Address line 2:</b>
+  <%= @organisation.org_addressline2 %>
+</p>
+
+<p>
+  <b>Address line 3:</b>
+  <%= @organisation.org_addressline3 %>
+</p>
+
+<p>
+  <b>City:</b>
+  <%= @organisation.org_addresscity %>
+</p>
+
+<p>
+  <b>Postcode:</b>
+  <%= @organisation.org_addresspostcode %>
+</p>
+
+<p>
+  <b>Phone number:</b>
+  <%= @organisation.org_phonenumber %>
+</p>
+
+<p>
+  <b>Contact name:</b>
+  <%= @organisation.org_contactname %>
+</p>
+
+<p>
+  <b>Website:</b>
+  <%= @organisation.org_website %>
+</p>
+
+<p>
+  <b>Date added:</b>
+  <%= @organisation.created_at %>
+</p>
+
+<p>
+  <b>Added by:</b>
+  <%= @organisation.org_addedby %>
+</p>
+
+
+<%= link_to 'Edit', edit_organisation_path(@organisation) %> |
+<%= link_to 'Back', organisations_path %>

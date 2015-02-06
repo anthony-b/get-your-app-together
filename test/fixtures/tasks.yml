@@ -1,0 +1,31 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  task_title: MyString
+  task_description: MyString
+  task_completed: false
+  task_completedby: MyString
+  task_assignedto: MyString
+  task_type: MyString
+  task_datecreated: MyString
+  task_createdby: MyString
+  task_productassignedto: MyString
+  task_orgassignedto: MyString
+  ID_org: MyString
+  ID_product: MyString
+  ID_task: 1
+
+two:
+  task_title: MyString
+  task_description: MyString
+  task_completed: false
+  task_completedby: MyString
+  task_assignedto: MyString
+  task_type: MyString
+  task_datecreated: MyString
+  task_createdby: MyString
+  task_productassignedto: MyString
+  task_orgassignedto: MyString
+  ID_org: MyString
+  ID_product: MyString
+  ID_task: 1

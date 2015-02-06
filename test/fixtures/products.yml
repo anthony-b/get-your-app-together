@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  product_name: MyString
+  product_description: MyString
+  product_configs: MyString
+  product_datecreated: MyString
+  product_createdby: MyString
+  product_orgID: MyString
+
+two:
+  product_name: MyString
+  product_description: MyString
+  product_configs: MyString
+  product_datecreated: MyString
+  product_createdby: MyString
+  product_orgID: MyString

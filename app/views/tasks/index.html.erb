@@ -1,0 +1,42 @@
+<h1>Listing tasks</h1>
+
+<table>
+  <tr>
+    <th>Id task</th>
+    <th>Title</th>
+    <th>Description</th>
+    <th>Completed</th>
+    <th>Completed By</th>
+    <th>Assigned To</th>
+    <th>Type</th>
+    <th>Date Created</th>
+    <th>Createdby</th>
+    <th>Product Assigned To</th>
+    <th>Org Assigned To</th>
+		<th></th>
+
+  </tr>
+
+<% @tasks.each do |task| %>
+  <tr>
+    <td><%= task.id %></td>
+    <td><%= task.task_title %></td>
+    <td><%= task.task_description %></td>
+    <td><%= task.task_completed %></td>
+    <td><%= task.task_completedby %></td>
+    <td><%= task.task_assignedto %></td>
+    <td><%= task.task_type %></td>
+    <td><%= task.created_at %></td>
+    <td><%= task.task_createdby %></td>
+    <td><%= link_to task.task_productassignedto, :controller => "products", :id => task.task_productassignedto %></td>
+	<td><%= link_to task.task_orgassignedto, :controller => "organisations", :id => task.task_orgassignedto %></td>
+    <td><%= link_to 'Show', task %><br/>
+    <%= link_to 'Edit', edit_task_path(task) %><br/>
+    <%= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Task', new_task_path %>

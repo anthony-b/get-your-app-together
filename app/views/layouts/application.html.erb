@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Chronos</title>
+		<%= stylesheet_link_tag    "application", :media => "all" %>
+		<%= javascript_include_tag "application" %>
+		<%= csrf_meta_tags %>
+	</head>
+	<body>
+		<div class="navbar navbar-inverse navbar-fixed-top">
+			<div class="navbar-inner">
+				<ul class="nav navbar-nav">
+					<li><%= link_to "Home", root_path %></li>
+					<li><%= link_to "Organisations", organisations_path %></li>
+					<li><%= link_to "Products", products_path %></li>
+					<li><%= link_to "Tasks", tasks_path %></li>
+					<li><%= link_to "My Tasks", mytasks_path %></li>
+					<% if signed_in?(:user)%>
+					<% if current_user.is_admin == true  %>
+					<li class="dropdown">
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#">Admin<b class="caret"></b></a>
+						<ul class="dropdown-menu">
+							<li><%= link_to "Users", users_path, {:class => ""}%></li>
+						</ul>
+					</li>
+					<% else %>
+                    <% end %>
+					<% if current_user.is_admin || current_user.is_sales == true %>
+					<li class="dropdown">
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#">Sales<span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><%= link_to "Users", users_path, {:class => ""}%></li>
+						</ul>
+					</li>
+					<% else %>
+                    <% end %>
+					<% if current_user.is_admin || current_user.is_finance == true %>
+					<li class="dropdown">
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#">Finance<b class="caret"></b></a>
+						<ul class="dropdown-menu">
+							<li><%= link_to "Users", users_path, {:class => ""}%></li>
+						</ul>
+					</li>
+					<% else %>
+                    <% end %>
+					<% if current_user.is_admin || current_user.is_support == true %>
+					<li class="dropdown">
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#">Support<b class="caret"></b></a>
+						<ul class="dropdown-menu">
+							<li><%= link_to "Users", users_path, {:class => ""}%></li>
+						</ul>
+					</li>
+					<% else %>
+                    <% end %>
+					<% if current_user.is_admin || current_user.is_development == true %>
+					<li class="dropdown">
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#">Development<b class="caret"></b></a>
+						<ul class="dropdown-menu">
+							<li><%= link_to "Users", users_path, {:class => ""}%></li>
+						</ul>
+					</li>
+					<% else %>
+                    <% end %>
+					<% end %>
+				</ul>
+				<ul class="nav navbar-nav pull-right">
+					<% if signed_in?(:user)%>
+					
+					<li>
+						<% if current_user.profile_name.blank? %>
+						<%= link_to current_user.email, current_user %>
+						<% else %>
+						<%= link_to current_user.profile_name, current_user %> 
+						
+					    <% end %>
+					</li>
+					<li><%= link_to "Log Out", destroy_user_session_path, method: :delete %></li>
+					<li><%= image_tag gravatar_url(current_user), :class => "gravatar", size: "41x41" %></li>
+					<% else %>
+					<li> <%=link_to "Register", sign_up_path%></li>
+					<li> <%=link_to "Log in", sign_in_path %></li>
+					<% end %>
+				</ul></div>
+		</div>
+		<p class="notice"><%= notice %></p>
+		<p class="alert"><%= alert %></p>
+		<%= yield %>
+		
+	</body>
+</html>

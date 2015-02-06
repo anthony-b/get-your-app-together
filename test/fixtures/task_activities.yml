@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  time_taken: MyString
+  notes: MyString
+
+two:
+  time_taken: MyString
+  notes: MyString

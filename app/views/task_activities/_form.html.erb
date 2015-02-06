@@ -1,0 +1,68 @@
+<%= form_for(@task_activity) do |f| %>
+  <% if @task_activity.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@task_activity.errors.count, "error") %> prohibited this task_activity from being saved:</h2>
+
+      <ul>
+      <% @task_activity.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<script type="text/javascript">
+var c=00;
+var d=00;
+var e=0;
+var t;
+var timer_is_on=0;
+ 
+function timedCount()
+{
+document.getElementById('task_activity_time_taken').value=e;
+c=c+1;
+e=d+ ":"+ c
+if( c == 60){
+	d=d+1;
+	c = 00;
+}
+
+t=setTimeout("timedCount()",1000);
+}
+ 
+function doTimer()
+{
+if (!timer_is_on)
+  {
+  timer_is_on=1;
+  timedCount();
+  }
+}
+ 
+function stopCount()
+{
+clearTimeout(t);
+timer_is_on=0;
+}
+</script>
+
+
+  <div class="field">
+    <%= f.label "Task assigned to" %><br />
+    <%= f.collection_select :task_activity_task_productassignedto, Task.order(:task_title),:task_title,:task_title, include_blank: true %>
+  </div>
+  <div class="field">
+
+    <%= f.label :time_taken %><br />
+    <%= f.text_field :time_taken %><br/>
+	<%= f.submit :onclick => "doTimer()", :type => "button", :value => "Start"%>
+	<%= f.submit :onclick => "stopCount()", :type => "button", :value => "Stop"%>
+  </div>
+  <div class="field">
+    <%= f.label :notes %><br />
+    <%= f.text_field :notes %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
